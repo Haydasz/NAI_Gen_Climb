@@ -19,7 +19,7 @@ namespace NAI_Gen_Climb
 
         private void generate_Click(object sender, EventArgs e)
         {
-            Gen gen = new Gen(Int32.Parse(population.Text), 500, 1, -5, 5);
+            Gen gen = new Gen(Int32.Parse(population.Text), Int32.Parse(iteration.Text), 1, Double.Parse(min.Text), Double.Parse(max.Text));
             gen.runGen();
         }
     }
