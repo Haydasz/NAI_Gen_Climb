@@ -107,15 +107,12 @@ namespace NAI_Gen_Climb
             tempArr = pop1;
             tempArr2 = pop2;
 
-            for (idx = locus; idx < pop1.Length; idx++)
+            for (idx = locus; idx < 8; idx++)
             {
                 pop1[idx] = tempArr2[idx];
-            }
-
-            for (idx = locus; idx < pop1.Length; idx++)
-            {
                 pop2[idx] = tempArr[idx];
             }
+
 
             list.Add(pop1);
             list.Add(pop2);
