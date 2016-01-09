@@ -52,7 +52,6 @@ namespace NAI_Gen_Climb
 
             Console.WriteLine(minimum);
             Console.WriteLine(minIter);
-            Console.Read();
         }
 
         private double[] crossPopulation(double[] pop)
