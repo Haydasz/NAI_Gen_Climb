@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 
 namespace NAI_Gen_Climb
 {
+    public class Czlon
+    {
+        double x1;
+        double x2;
+        double wynik;
+
+        public Czlon(double min , double  max)
+        {
+            x1 = Gen.RandomZZakresu(min, max);
+            x2 = Gen.RandomZZakresu(min, max);
+        } 
+
+    }
     class Gen
     {
+        static Random random = new Random();
         private int popSize; //wielkosc populacji
         private int iteration; //ilosc iteracji
         private int func; //funkcja
         private double min; //dolny zakres
         private double max; //gorny zakres
-        double[] pop; //populacja
+        List<Czlon> pop; //populacja
 
-        byte[,] bytePop; //tablica chromosomów populacji
 
         public Gen(int popSize, int iteration, int func, double min, double max)
         {
@@ -37,17 +50,10 @@ namespace NAI_Gen_Climb
 
             for (idx=0; idx<iteration; idx++)
             {
-                for (idy = 1; idy < popSize; idy++)
-                {
-                    y = Program.funcTest1(pop[idy-1], pop[idy]);
+                Selection();
+                Crossover();
+                Mutate();
 
-                    if (y < minimum)
-                    {
-                        minimum = y;
-                        minIter = idx;
-                    }
-                }
-                pop = this.crossPopulation(pop);
             }
 
             Console.WriteLine(minimum);
@@ -133,18 +139,19 @@ namespace NAI_Gen_Climb
             return list;
         }
 
-        private double[] initPop(double min, double max, int popSize)
+        private List<Czlon> initPop(double min, double max, int popSize)
         {
-            double[] arr = new double[popSize];
-            int idx;
-            Random random = new Random();
-
-            for (idx = 0; idx < popSize; idx++)
+            var tempList = new List<Czlon>();
+            for (int idx = 0; idx < popSize; idx++)
             {
-                arr[idx] = random.NextDouble() * (max - min) + min; 
+                tempList.Add(new Czlon(min, max));
             }
+            return tempList;
+        }
 
-            return arr;
+        public static double RandomZZakresu(double min, double max)
+        {
+            return random.NextDouble() * (max - min) + min;
         }
     }
 }
