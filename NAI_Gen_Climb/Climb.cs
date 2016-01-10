@@ -12,13 +12,15 @@ namespace NAI_Gen_Climb
         private int func;
         private double min;
         private double max;
+        private double startPoint;
 
-        public Climb(int iteration, int func, double min, double max)
+        public Climb(int iteration, int func, double min, double max, double startPoint)
         {
             this.iteration = iteration;
             this.func = func;
             this.min = min;
             this.max = max;
+            this.startPoint = startPoint;
         }
 
         internal void run()
@@ -27,11 +29,13 @@ namespace NAI_Gen_Climb
             double f, minimum, x, y;
             double[] probeArray = new double[2];
 
+            double delta = 0.0001;
+
             minimum = Double.MaxValue;
 
             for (idx = 0; idx < iteration; idx++)
             {
-                probeArray = this.getProbe();
+                probeArray = this.getProbe(delta);
                 f = Program.funcTest1(probeArray[0], probeArray[1]);
 
                 if (f < minimum)
@@ -39,19 +43,24 @@ namespace NAI_Gen_Climb
                     minimum = f;
                     minIter = idx;
                 }
+
+                if (probeArray[0] < probeArray[1])
+                    startPoint = probeArray[0];
+                else
+                    startPoint = probeArray[1];
             }
 
             Console.WriteLine(minimum);
             Console.WriteLine(minIter);
         }
 
-        private double[] getProbe()
+        private double[] getProbe(double delta)
         {
             Random random = new Random();
             double[] probeArray = new double[2];
 
-            probeArray[0] = random.NextDouble() * (max - min) + min;
-            probeArray[1] = random.NextDouble() * (max - min) + min;
+            probeArray[0] = startPoint + delta;
+            probeArray[1] = startPoint - delta;
 
             return probeArray;
         }

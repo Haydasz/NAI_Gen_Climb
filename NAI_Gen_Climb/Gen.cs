@@ -50,9 +50,9 @@ namespace NAI_Gen_Climb
 
             for (idx=0; idx<iteration; idx++)
             {
-                Selection();
-                Crossover();
-                Mutate();
+                //Selection();
+                //Crossover();
+               // Mutate();
 
             }
 
