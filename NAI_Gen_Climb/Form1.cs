@@ -25,5 +25,15 @@ namespace NAI_Gen_Climb
             gen.runGen();
             climb.run();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
