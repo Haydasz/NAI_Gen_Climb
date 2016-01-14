@@ -222,7 +222,6 @@
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "0.001";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -232,7 +231,6 @@
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Dystans";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label1
             // 
