@@ -13,23 +13,25 @@ namespace NAI_Gen_Climb
         private double min;
         private double max;
         private double startPoint;
+        private double delta;
 
-        public Climb(int iteration, int func, double min, double max, double startPoint)
+        public Climb(int iteration, int func, double min, double max, double startPoint, double delta)
         {
             this.iteration = iteration;
             this.func = func;
-            this.min = min;
-            this.max = max;
+            //this.min = min;
+           // this.max = max;
             this.startPoint = startPoint;
+            this.delta = delta;
         }
 
         internal void run()
         {
-            int idx, idy, minIter = 0;
-            double f, minimum, x, y;
+            int idx, /* idy*/ minIter = 0;
+            double f, minimum; // x, y;
             double[] probeArray = new double[2];
 
-            double delta = 0.0001;
+            
 
             minimum = Double.MaxValue;
 
