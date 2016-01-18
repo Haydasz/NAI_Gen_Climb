@@ -6,19 +6,7 @@ using System.Threading.Tasks;
 
 namespace NAI_Gen_Climb
 {
-    public class Czlon
-    {
-        double x1;
-        double x2;
-        double wynik;
 
-        public Czlon(double min , double  max)
-        {
-            x1 = Gen.RandomZZakresu(min, max);
-            x2 = Gen.RandomZZakresu(min, max);
-        } 
-
-    }
     class Gen
     {
         static Random random = new Random();
@@ -43,16 +31,23 @@ namespace NAI_Gen_Climb
         {
             int idx, idy, minIter = 0;
             double y, minimum;
-           // Map 
+            // Map 
 
             minimum = Double.MaxValue;
             pop = this.initPop(min, max, popSize); //inicjalizacja populacji
 
-            for (idx=0; idx<iteration; idx++)
+            for (idx = 0; idx < iteration; idx++)
             {
-                //Selection();
-                //Crossover();
-               // Mutate();
+                pop = Selection(pop);
+                pop = Crossover(pop);
+                pop = Mutate(pop);
+
+                pop.OrderBy(x => x.wynik);
+                if (pop[0].wynik < minimum)
+                {
+                    minimum = pop[0].wynik;
+                    minIter = idx;
+                }
 
             }
 
@@ -60,83 +55,109 @@ namespace NAI_Gen_Climb
             Console.WriteLine(minIter);
         }
 
-        private double[] crossPopulation(double[] pop)
+        private List<Czlon> Mutate(List<Czlon> list)
         {
-            var list = new List<byte[]> { };
-            var listNew = new List<byte[]> { };
-            double[] ret = new double[popSize];
-            
-            byte[] pop1 = new byte[8];
-            byte[] pop2 = new byte[8];
-            Random random = new Random();
-            int locus = random.Next(7);
-            int idx;
-
-            list = bytePopulation(pop); //inicjalizacja chromosomów z populacji
-
-            for (idx = 2; idx < list.Count; idx=idx+2)
+            foreach (var item in list)
             {
-                pop1= list[idx-1];
-                pop2 = list[idx];
+                int mutate = random.Next(100);
+                var mutation = new byte[8];
+                if (mutate >= 99)
+                {
+                    int whichAllel = random.Next(1);
+                    if (whichAllel == 0)
+                        mutation = BitConverter.GetBytes(item.x1);
+                    else
+                        mutation = BitConverter.GetBytes(item.x2);
 
-                listNew = this.crossChromosome(pop1, pop2, locus, listNew);
-            }
+                    int whichPlace = random.Next(0, 7);
 
-            ret = debytePopulation(listNew);
+                    mutation[whichPlace] = (byte)random.Next(0, 255);
 
-            return ret;
-        }
-
-        private double[] debytePopulation(List<byte[]> listNew)
-        {
-            double result;
-            double[] newPop = new double[popSize];
-            int idx = 0;
-
-            foreach (var iter in listNew)
-            {
-               result =  BitConverter.ToDouble(iter, 0);
-                newPop[idx] = result;
-                idx++;
-            }
-
-            return newPop;
-        }
-
-        private List<byte[]> crossChromosome(byte[] pop1, byte[] pop2, int locus, List<byte[]> list)
-        {
-            byte[] tempArr = new byte[8];
-            byte[] tempArr2 = new byte[8];
-            int idx;
-
-            tempArr = pop1;
-            tempArr2 = pop2;
-
-            for (idx = locus; idx < 8; idx++)
-            {
-                pop1[idx] = tempArr2[idx];
-                pop2[idx] = tempArr[idx];
-            }
-
-
-            list.Add(pop1);
-            list.Add(pop2);
-            return list;
-        }
-
-        private List<byte[]> bytePopulation(double[] pop)
-        {
-            var list = new List<byte[]> { };
-            byte[] array;
-            int idx;
-
-            for (idx = 0; idx < pop.Length; idx++)
-            {
-                array = BitConverter.GetBytes(pop[idx]);
-                list.Add(array);
+                    if (whichAllel == 0)
+                        item.x1 = BitConverter.ToDouble(mutation, 0);
+                    else
+                        item.x2 = BitConverter.ToDouble(mutation, 0);
+                }
             }
 
             return list;
+        }
+
+        private List<Czlon> Crossover(List<Czlon> list)
+        {
+            int locus;
+            var parentList = new List<Czlon>();
+
+            foreach (var item in list)
+            {
+                if (random.Next() % 100 > 50) parentList.Add(item);
+            }
+            if (parentList.Count % 2 != 0) parentList.Remove(parentList[0]);
+
+            for (int i = 0; i < parentList.Count / 2; i = i + 2)
+            {
+                list.Remove(parentList[i]);
+                list.Remove(parentList[i + 1]);
+                var parentOneX = BitConverter.GetBytes(parentList[i].x1);
+                var parentOneY = BitConverter.GetBytes(parentList[i].x2);
+                var parentTwoX = BitConverter.GetBytes(parentList[i + 1].x1);
+                var parentTwoY = BitConverter.GetBytes(parentList[i + 1].x2);
+
+                locus = random.Next(7);
+                var childOneX = new byte[8];
+                var childOneY = new byte[8];
+                var childTwoX = new byte[8];
+                var childTwoY = new byte[8];
+
+                for (int j = 0; j < 8; j++)
+                {
+                    if (j <= locus)
+                    {
+                        childOneX[j] = parentOneX[j];
+                        childOneY[j] = parentOneY[j];
+                        childTwoX[j] = parentTwoX[j];
+                        childTwoY[j] = parentTwoY[j];
+                    }
+                    else
+                    {
+                        childOneX[j] = parentTwoX[j];
+                        childOneY[j] = parentTwoY[j];
+                        childTwoX[j] = parentOneX[j];
+                        childTwoY[j] = parentOneY[j];
+                    }
+                }
+
+                var childOne = new Czlon(childOneX, childOneY);
+                list.Add(childOne);
+
+                var childTwo = new Czlon(childTwoX, childTwoY);
+                list.Add(childTwo);
+
+            }
+
+            return list;
+        }
+
+        private List<Czlon> Selection(List<Czlon> list)
+        {
+            var tempList = new List<Czlon>();
+            list = list.OrderBy(x => x.wynik).ToList();
+            int listCount = list.Count - 2;
+            tempList.Add(list[0]);
+            tempList.Add(list[1]);
+
+            for (int i = 0; i < listCount; i++)
+            {
+                int rand1 = random.Next(0, listCount);
+                int rand2 = random.Next(0, listCount);
+
+                if (list[rand1].wynik > list[rand2].wynik)
+                    tempList.Add(list[rand2]);
+                else
+                    tempList.Add(list[rand1]);
+            }
+
+            return tempList;
         }
 
         private List<Czlon> initPop(double min, double max, int popSize)
