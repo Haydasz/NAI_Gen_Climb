@@ -10,8 +10,8 @@ namespace NAI_Gen_Climb
     {
         private int iteration;
         private int func;
-        private double min;
-        private double max;
+        //private double min;
+        //private double max;
         private double startPoint;
         private double delta;
 
@@ -38,7 +38,26 @@ namespace NAI_Gen_Climb
             for (idx = 0; idx < iteration; idx++)
             {
                 probeArray = this.getProbe(delta);
-                f = Program.funcTest1(probeArray[0], probeArray[1]);
+
+                switch (func)
+                {
+                    case 0:
+                        f = Functions.funcTest1(probeArray[0], probeArray[1]);
+                        break;
+                    case 1:
+                        f = Functions.funcGeem(probeArray[0], probeArray[1]);
+                        break;
+                    case 2:
+                        f = Functions.funcMatyas(probeArray[0], probeArray[1]);
+                        break;
+                    case 3:
+                        f = Functions.funcBeala(probeArray[0], probeArray[1]);
+                        break;
+                    default:
+                        f = Functions.funcTest1(probeArray[0], probeArray[1]);
+                        break;
+                }
+               
 
                 if (f < minimum)
                 {

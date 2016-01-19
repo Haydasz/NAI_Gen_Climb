@@ -19,11 +19,23 @@ namespace NAI_Gen_Climb
 
         private void generate_Click(object sender, EventArgs e)
         {
-            Gen gen = new Gen(Int32.Parse(population.Text), Int32.Parse(iteration.Text), 1, Double.Parse(min.Text), Double.Parse(max.Text));
-            Climb climb = new Climb(Int32.Parse(iteration.Text), 1, Double.Parse(min.Text), Double.Parse(max.Text),5.0, Double.Parse(delta.Text));
+            int fid = function.SelectedIndex;
+
+            Gen gen = new Gen(Int32.Parse(population.Text), Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text));
+            Climb climb = new Climb(Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text),5.0, Double.Parse(delta.Text));
 
             gen.runGen();
             climb.run();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
