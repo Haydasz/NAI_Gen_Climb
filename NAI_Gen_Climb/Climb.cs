@@ -14,6 +14,7 @@ namespace NAI_Gen_Climb
         //private double max;
         private double startPoint;
         private double delta;
+        private List<string> ret;
 
         public Climb(int iteration, int func, double min, double max, double startPoint, double delta)
         {
@@ -25,11 +26,12 @@ namespace NAI_Gen_Climb
             this.delta = delta;
         }
 
-        internal void run()
+        internal List<String> run()
         {
             int idx, /* idy*/ minIter = 0;
             double f, minimum; // x, y;
             double[] probeArray = new double[2];
+     
 
             
 
@@ -63,6 +65,13 @@ namespace NAI_Gen_Climb
                 {
                     minimum = f;
                     minIter = idx;
+
+                    ret = new List<string>();
+
+                    ret.Add(minimum.ToString());
+                    ret.Add(minIter.ToString());
+                    ret.Add(probeArray[0].ToString());
+                    ret.Add(probeArray[1].ToString());
                 }
 
                 if (probeArray[0] < probeArray[1])
@@ -73,6 +82,8 @@ namespace NAI_Gen_Climb
 
             Console.WriteLine(minimum);
             Console.WriteLine(minIter);
+
+            return ret;
         }
 
         private double[] getProbe(double delta)

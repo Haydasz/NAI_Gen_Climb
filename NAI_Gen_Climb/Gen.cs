@@ -16,7 +16,7 @@ namespace NAI_Gen_Climb
         private double min; //dolny zakres
         private double max; //gorny zakres
         List<Czlon> pop; //populacja
-
+        private List<string> ret;
 
         public Gen(int popSize, int iteration, int func, double min, double max)
         {
@@ -27,11 +27,11 @@ namespace NAI_Gen_Climb
             this.max = max;
         }
 
-        public void runGen()
+        public List<String> runGen()
         {
             int idx, idy, minIter = 0;
             double y, minimum;
-            // Map 
+           
 
             minimum = Double.MaxValue;
             pop = this.initPop(min, max, popSize); //inicjalizacja populacji
@@ -45,15 +45,27 @@ namespace NAI_Gen_Climb
                 pop.OrderBy(x => x.wynik);
                 if (pop[0].wynik < minimum)
                 {
+                    ret = new List<string>();
+
                     minimum = pop[0].wynik;
                     minIter = idx;
+                    ret.Add(minimum.ToString());
+                    ret.Add(minIter.ToString());
+                    ret.Add(pop[0].x1.ToString());
+                    ret.Add(pop[0].x2.ToString());
                 }
 
             }
 
+           
             Console.WriteLine(minimum);
             Console.WriteLine(minIter);
+
+            
+            return ret;
         }
+
+
 
         private List<Czlon> Mutate(List<Czlon> list)
         {

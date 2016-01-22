@@ -40,9 +40,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.generate = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.genIter = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.genMin = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.genY = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.genX = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.population = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.climbIter = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.climbMin = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.climbY = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.climbX = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,23 +69,13 @@
             this.delta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.Overviev.SuspendLayout();
             this.Przegląd.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Overviev
@@ -158,7 +166,6 @@
             this.function.Name = "function";
             this.function.Size = new System.Drawing.Size(121, 21);
             this.function.TabIndex = 3;
-            this.function.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // iteration
             // 
@@ -201,6 +208,91 @@
             this.tabPage1.Text = "Genetyczny";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.genIter);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.genMin);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.genY);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.genX);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Location = new System.Drawing.Point(21, 71);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(376, 100);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Wynik";
+            // 
+            // genIter
+            // 
+            this.genIter.Location = new System.Drawing.Point(273, 57);
+            this.genIter.Name = "genIter";
+            this.genIter.Size = new System.Drawing.Size(53, 20);
+            this.genIter.TabIndex = 10;
+            this.genIter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(196, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "iteracja";
+            // 
+            // genMin
+            // 
+            this.genMin.Location = new System.Drawing.Point(273, 31);
+            this.genMin.Name = "genMin";
+            this.genMin.Size = new System.Drawing.Size(53, 20);
+            this.genMin.TabIndex = 11;
+            this.genMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(196, 34);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "minimum";
+            // 
+            // genY
+            // 
+            this.genY.Location = new System.Drawing.Point(89, 57);
+            this.genY.Name = "genY";
+            this.genY.Size = new System.Drawing.Size(53, 20);
+            this.genY.TabIndex = 7;
+            this.genY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(12, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "y";
+            // 
+            // genX
+            // 
+            this.genX.Location = new System.Drawing.Point(89, 31);
+            this.genX.Name = "genX";
+            this.genX.Size = new System.Drawing.Size(53, 20);
+            this.genX.TabIndex = 7;
+            this.genX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(12, 34);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(12, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "x";
+            // 
             // population
             // 
             this.population.Location = new System.Drawing.Point(129, 20);
@@ -232,6 +324,91 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Wspinaczkowy";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.climbIter);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.climbMin);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.climbY);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.climbX);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Location = new System.Drawing.Point(19, 124);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(376, 100);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wynik";
+            // 
+            // climbIter
+            // 
+            this.climbIter.Location = new System.Drawing.Point(273, 57);
+            this.climbIter.Name = "climbIter";
+            this.climbIter.Size = new System.Drawing.Size(53, 20);
+            this.climbIter.TabIndex = 10;
+            this.climbIter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(196, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "iteracja";
+            // 
+            // climbMin
+            // 
+            this.climbMin.Location = new System.Drawing.Point(273, 31);
+            this.climbMin.Name = "climbMin";
+            this.climbMin.Size = new System.Drawing.Size(53, 20);
+            this.climbMin.TabIndex = 11;
+            this.climbMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(196, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "minimum";
+            // 
+            // climbY
+            // 
+            this.climbY.Location = new System.Drawing.Point(89, 57);
+            this.climbY.Name = "climbY";
+            this.climbY.Size = new System.Drawing.Size(53, 20);
+            this.climbY.TabIndex = 7;
+            this.climbY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 60);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(12, 13);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "y";
+            // 
+            // climbX
+            // 
+            this.climbX.Location = new System.Drawing.Point(89, 31);
+            this.climbX.Name = "climbX";
+            this.climbX.Size = new System.Drawing.Size(53, 20);
+            this.climbX.TabIndex = 7;
+            this.climbX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(12, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "x";
             // 
             // groupBox1
             // 
@@ -310,105 +487,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Symulacja optymalizacji funkcji za pomocą algorytmów";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(19, 124);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Punkt początkowy";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(89, 57);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 20);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.Text = "0.5";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 60);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(12, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "y";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(89, 31);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(53, 20);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "1";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(12, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "x";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(21, 71);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 100);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Punkt początkowy";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(89, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(53, 20);
-            this.textBox5.TabIndex = 7;
-            this.textBox5.Text = "0.5";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(12, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "y";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(89, 31);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(53, 20);
-            this.textBox6.TabIndex = 7;
-            this.textBox6.Text = "1";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 34);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(12, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "x";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,14 +501,14 @@
             this.Przegląd.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,15 +540,23 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox genY;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox genX;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox genIter;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox genMin;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox climbIter;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox climbMin;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox climbY;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox climbX;
+        private System.Windows.Forms.Label label16;
     }
 }
 

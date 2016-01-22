@@ -23,19 +23,19 @@ namespace NAI_Gen_Climb
 
             Gen gen = new Gen(Int32.Parse(population.Text), Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text));
             Climb climb = new Climb(Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text),5.0, Double.Parse(delta.Text));
+            List<String> genControls = gen.runGen();
+            List<String> climbControls = climb.run();
 
-            gen.runGen();
-            climb.run();
+            genMin.Text = genControls[0];
+            genIter.Text = genControls[1];
+            genX.Text = genControls[2];
+            genY.Text = genControls[3];
+
+            climbMin.Text = climbControls[0];
+            climbIter.Text = climbControls[1];
+            climbX.Text = climbControls[2];
+            climbY.Text = climbControls[3];
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
