@@ -37,5 +37,14 @@ namespace NAI_Gen_Climb
             climbY.Text = climbControls[3];
         }
 
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
