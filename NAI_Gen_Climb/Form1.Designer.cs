@@ -64,18 +64,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cliX = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.delta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Overviev.SuspendLayout();
             this.Przegląd.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,6 +101,7 @@
             // 
             // Przegląd
             // 
+            this.Przegląd.Controls.Add(this.checkBox1);
             this.Przegląd.Controls.Add(this.max);
             this.Przegląd.Controls.Add(this.label6);
             this.Przegląd.Controls.Add(this.min);
@@ -423,7 +425,7 @@
             // 
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.cliX);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(19, 18);
             this.groupBox1.Name = "groupBox1";
@@ -450,14 +452,14 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "y";
             // 
-            // textBox2
+            // cliX
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(53, 20);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "1";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cliX.Location = new System.Drawing.Point(89, 31);
+            this.cliX.Name = "cliX";
+            this.cliX.Size = new System.Drawing.Size(53, 20);
+            this.cliX.TabIndex = 7;
+            this.cliX.Text = "1";
+            this.cliX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -486,16 +488,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Dystans";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(16, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Symulacja optymalizacji funkcji za pomocą algorytmów";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBox5);
@@ -512,23 +504,24 @@
             this.tabPage2.Text = "Harmonii";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBox5
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "0.45";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox5.Location = new System.Drawing.Point(137, 35);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(53, 20);
+            this.textBox5.TabIndex = 10;
+            this.textBox5.Text = "10";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label17
+            // label19
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(26, 124);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "PAR";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(26, 38);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(31, 13);
+            this.label19.TabIndex = 9;
+            this.label19.Text = "HSM";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // textBox4
             // 
@@ -549,24 +542,44 @@
             this.label18.Text = "HMCR";
             this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
-            // textBox5
+            // textBox1
             // 
-            this.textBox5.Location = new System.Drawing.Point(137, 35);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(53, 20);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.Text = "10";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Location = new System.Drawing.Point(137, 121);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(53, 20);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "0.45";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label19
+            // label17
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(26, 38);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(31, 13);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "HSM";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(26, 124);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "PAR";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(16, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(389, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Symulacja optymalizacji funkcji za pomocą algorytmów";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(215, 184);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Gotowe";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -618,7 +631,7 @@
         private System.Windows.Forms.TextBox delta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox cliX;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -647,6 +660,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

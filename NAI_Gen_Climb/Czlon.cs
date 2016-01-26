@@ -10,7 +10,7 @@ namespace NAI_Gen_Climb
     {
         public double x1;
         public double x2;
-        public double wynik { get { return Math.Pow(x1, 2) + (x1 * x2) + 0.5 * (Math.Pow(x2, 2)) - x1 - x2; } }
+        public double wynik { get { return Functions.functionCreate(x1, x2); } }
         //
         public Czlon(double min, double max)
         {

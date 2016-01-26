@@ -41,25 +41,25 @@ namespace NAI_Gen_Climb
             {
                 probeArray = this.getProbe(delta);
 
-                switch (func)
-                {
-                    case 0:
-                        f = Functions.funcTest1(probeArray[0], probeArray[1]);
-                        break;
-                    case 1:
-                        f = Functions.funcGeem(probeArray[0], probeArray[1]);
-                        break;
-                    case 2:
-                        f = Functions.funcMatyas(probeArray[0], probeArray[1]);
-                        break;
-                    case 3:
-                        f = Functions.funcBeala(probeArray[0], probeArray[1]);
-                        break;
-                    default:
-                        f = Functions.funcTest1(probeArray[0], probeArray[1]);
-                        break;
-                }
-               
+                /* switch (func)
+                 {
+                     case 0:
+                         f = Functions.funcTest1(probeArray[0], probeArray[1]);
+                         break;
+                     case 1:
+                         f = Functions.funcGeem(probeArray[0], probeArray[1]);
+                         break;
+                     case 2:
+                         f = Functions.funcMatyas(probeArray[0], probeArray[1]);
+                         break;
+                     case 3:
+                         f = Functions.funcBeala(probeArray[0], probeArray[1]);
+                         break;
+                     default:
+                         f = Functions.funcTest1(probeArray[0], probeArray[1]);
+                         break;
+                 }*/
+                f = Functions.functionCreate(probeArray[0], probeArray[1]);
 
                 if (f < minimum)
                 {
