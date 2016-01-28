@@ -540,7 +540,7 @@
             this.hmcr.Name = "hmcr";
             this.hmcr.Size = new System.Drawing.Size(53, 20);
             this.hmcr.TabIndex = 8;
-            this.hmcr.Text = "0.85";
+            this.hmcr.Text = "0,85";
             this.hmcr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
@@ -559,7 +559,7 @@
             this.par.Name = "par";
             this.par.Size = new System.Drawing.Size(53, 20);
             this.par.TabIndex = 6;
-            this.par.Text = "0.45";
+            this.par.Text = "0,45";
             this.par.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17

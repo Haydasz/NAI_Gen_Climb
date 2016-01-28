@@ -17,6 +17,7 @@ namespace NAI_Gen_Climb
         {
             Random rand = new Random();
             //HMi(d) = LB(d) + (UB(d) – LB(d))  rand() for i = 0 to HMS – 1 and d = 0 to D
+
             x1 = min + (max - min) * rand.NextDouble();
             x2 = min + (max - min) * rand.NextDouble();
         }

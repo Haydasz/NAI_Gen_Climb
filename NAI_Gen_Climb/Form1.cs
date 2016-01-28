@@ -26,11 +26,12 @@ namespace NAI_Gen_Climb
 
             Evolution gen = new Evolution(Int32.Parse(population.Text), Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text));
             Climb climb = new Climb(Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text), Double.Parse(cliX.Text), Double.Parse(delta.Text));
-            Harmony harmony = new Harmony(Int32.Parse(hsm.Text), Double.Parse(hmcr.Text), Double.Parse(par.Text), Double.Parse(min.Text), Double.Parse(max.Text));
-            List<String> genControls = gen.runGen();
-            List<String> climbControls = climb.run();
+            Harmony harmony = new Harmony(Int32.Parse(hsm.Text), Double.Parse(hmcr.Text), Double.Parse(par.Text), Double.Parse(min.Text), Double.Parse(max.Text), Int32.Parse(iteration.Text));
+           // List<String> genControls = gen.runGen();
+           // List<String> climbControls = climb.run();
+            List<String> harmonyControls = harmony.run();
 
-            genMin.Text = genControls[0];
+           /* genMin.Text = genControls[0];
             genIter.Text = genControls[1];
             genX.Text = genControls[2];
             genY.Text = genControls[3];
@@ -38,7 +39,7 @@ namespace NAI_Gen_Climb
             climbMin.Text = climbControls[0];
             climbIter.Text = climbControls[1];
             climbX.Text = climbControls[2];
-            climbY.Text = climbControls[3];
+            climbY.Text = climbControls[3];*/
 
             checkBox1.Checked = true;
         }
