@@ -24,8 +24,9 @@ namespace NAI_Gen_Climb
             Functions.functionChoice = fid;
             checkBox1.Checked = false;
 
-            Gen gen = new Gen(Int32.Parse(population.Text), Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text));
+            Evolution gen = new Evolution(Int32.Parse(population.Text), Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text));
             Climb climb = new Climb(Int32.Parse(iteration.Text), fid, Double.Parse(min.Text), Double.Parse(max.Text), Double.Parse(cliX.Text), Double.Parse(delta.Text));
+            Harmony harmony = new Harmony(Int32.Parse(hsm.Text), Double.Parse(hmcr.Text), Double.Parse(par.Text), Double.Parse(min.Text), Double.Parse(max.Text));
             List<String> genControls = gen.runGen();
             List<String> climbControls = climb.run();
 

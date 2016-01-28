@@ -30,6 +30,7 @@
         {
             this.Overviev = new System.Windows.Forms.TabControl();
             this.Przegląd = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.max = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.min = new System.Windows.Forms.TextBox();
@@ -69,14 +70,13 @@
             this.delta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.hsm = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.hmcr = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.par = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Overviev.SuspendLayout();
             this.Przegląd.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -118,6 +118,17 @@
             this.Przegląd.TabIndex = 1;
             this.Przegląd.Text = "Start";
             this.Przegląd.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(215, 184);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Gotowe";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // max
             // 
@@ -216,7 +227,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(459, 238);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Genetyczny";
+            this.tabPage1.Text = "Ewolucyjny";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -490,11 +501,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.hsm);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.hmcr);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.par);
             this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -504,14 +515,14 @@
             this.tabPage2.Text = "Harmonii";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // hsm
             // 
-            this.textBox5.Location = new System.Drawing.Point(137, 35);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(53, 20);
-            this.textBox5.TabIndex = 10;
-            this.textBox5.Text = "10";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.hsm.Location = new System.Drawing.Point(137, 35);
+            this.hsm.Name = "hsm";
+            this.hsm.Size = new System.Drawing.Size(53, 20);
+            this.hsm.TabIndex = 10;
+            this.hsm.Text = "10";
+            this.hsm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label19
             // 
@@ -523,14 +534,14 @@
             this.label19.Text = "HSM";
             this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
-            // textBox4
+            // hmcr
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 79);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(53, 20);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.Text = "0.85";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.hmcr.Location = new System.Drawing.Point(137, 79);
+            this.hmcr.Name = "hmcr";
+            this.hmcr.Size = new System.Drawing.Size(53, 20);
+            this.hmcr.TabIndex = 8;
+            this.hmcr.Text = "0.85";
+            this.hmcr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -542,14 +553,14 @@
             this.label18.Text = "HMCR";
             this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
-            // textBox1
+            // par
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "0.45";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.par.Location = new System.Drawing.Point(137, 121);
+            this.par.Name = "par";
+            this.par.Size = new System.Drawing.Size(53, 20);
+            this.par.TabIndex = 6;
+            this.par.Text = "0.45";
+            this.par.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -569,17 +580,6 @@
             this.label1.Size = new System.Drawing.Size(389, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Symulacja optymalizacji funkcji za pomocą algorytmów";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(215, 184);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Gotowe";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -654,11 +654,11 @@
         private System.Windows.Forms.TextBox climbX;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox hsm;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox hmcr;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox par;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckBox checkBox1;
     }

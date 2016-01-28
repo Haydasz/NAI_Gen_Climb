@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NAI_Gen_Climb
 {
 
-    class Gen
+    class Evolution
     {
         static Random random = new Random();
         private int popSize; //wielkosc populacji
@@ -15,10 +15,10 @@ namespace NAI_Gen_Climb
         private int func; //funkcja
         private double min; //dolny zakres
         private double max; //gorny zakres
-        List<Czlon> pop; //populacja
+        List<EvSegment> pop; //populacja
         private List<string> ret;
 
-        public Gen(int popSize, int iteration, int func, double min, double max)
+        public Evolution(int popSize, int iteration, int func, double min, double max)
         {
             this.popSize = popSize;
             this.iteration = iteration;
@@ -67,7 +67,7 @@ namespace NAI_Gen_Climb
 
 
 
-        private List<Czlon> Mutate(List<Czlon> list)
+        private List<EvSegment> Mutate(List<EvSegment> list)
         {
             foreach (var item in list)
             {
@@ -95,10 +95,10 @@ namespace NAI_Gen_Climb
             return list;
         }
 
-        private List<Czlon> Crossover(List<Czlon> list)
+        private List<EvSegment> Crossover(List<EvSegment> list)
         {
             int locus;
-            var parentList = new List<Czlon>();
+            var parentList = new List<EvSegment>();
 
             foreach (var item in list)
             {
@@ -139,10 +139,10 @@ namespace NAI_Gen_Climb
                     }
                 }
 
-                var childOne = new Czlon(childOneX, childOneY);
+                var childOne = new EvSegment(childOneX, childOneY);
                 list.Add(childOne);
 
-                var childTwo = new Czlon(childTwoX, childTwoY);
+                var childTwo = new EvSegment(childTwoX, childTwoY);
                 list.Add(childTwo);
 
             }
@@ -150,9 +150,9 @@ namespace NAI_Gen_Climb
             return list;
         }
 
-        private List<Czlon> Selection(List<Czlon> list)
+        private List<EvSegment> Selection(List<EvSegment> list)
         {
-            var tempList = new List<Czlon>();
+            var tempList = new List<EvSegment>();
             list = list.OrderBy(x => x.wynik).ToList();
             int listCount = list.Count - 2;
             tempList.Add(list[0]);
@@ -172,12 +172,12 @@ namespace NAI_Gen_Climb
             return tempList;
         }
 
-        private List<Czlon> initPop(double min, double max, int popSize)
+        private List<EvSegment> initPop(double min, double max, int popSize)
         {
-            var tempList = new List<Czlon>();
+            var tempList = new List<EvSegment>();
             for (int idx = 0; idx < popSize; idx++)
             {
-                tempList.Add(new Czlon(min, max));
+                tempList.Add(new EvSegment(min, max));
             }
             return tempList;
         }

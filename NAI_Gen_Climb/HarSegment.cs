@@ -6,22 +6,19 @@ using System.Threading.Tasks;
 
 namespace NAI_Gen_Climb
 {
-    class Czlon
+    class HarSegment
     {
+
         public double x1;
         public double x2;
         public double wynik { get { return Functions.functionCreate(x1, x2); } }
         //
-        public Czlon(double min, double max)
+        public HarSegment(double min, double max)
         {
-            x1 = Gen.RandomZZakresu(min, max);
-            x2 = Gen.RandomZZakresu(min, max);
-        }
-
-        public Czlon(byte[] x, byte[] y)
-        {
-            x1 = BitConverter.ToDouble(x, 0);
-            x2 = BitConverter.ToDouble(y, 0);
+            Random rand = new Random();
+            //HMi(d) = LB(d) + (UB(d) – LB(d))  rand() for i = 0 to HMS – 1 and d = 0 to D
+            x1 = min + (max - min) * rand.NextDouble();
+            x2 = min + (max - min) * rand.NextDouble();
         }
     }
 }
