@@ -42,7 +42,8 @@ namespace NAI_Gen_Climb
                 pop = Crossover(pop);
                 pop = Mutate(pop);
 
-                pop.OrderBy(x => x.wynik);
+               var tmp = pop.OrderBy(x => x.wynik).ToList();
+                pop = tmp;
                 if (pop[0].wynik < minimum)
                 {
                     ret = new List<string>();
