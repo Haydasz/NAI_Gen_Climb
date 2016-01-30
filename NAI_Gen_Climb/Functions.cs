@@ -13,6 +13,8 @@ namespace NAI_Gen_Climb
         public static double funcGeem(Double _x1, Double _x2)
         {
             double ret;
+            //_x1 = -0.007;
+            //_x2 = -0.009;
 
             ret = 4 * (Math.Pow(_x1, 2)) - ((2.1) * (Math.Pow(_x1, 4))) + ((Math.Pow(_x1, 6)) / 3) + _x1 * _x2 - (4 * (Math.Pow(_x2, 2))) + (4 * (Math.Pow(_x2, 4)));
           //  Console.WriteLine(ret);

@@ -21,5 +21,9 @@ namespace NAI_Gen_Climb
             x1 = min + (max - min) * rand.NextDouble();
             x2 = min + (max - min) * rand.NextDouble();
         }
+
+        public HarSegment()
+        {
+        }
     }
 }

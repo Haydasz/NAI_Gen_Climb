@@ -77,6 +77,13 @@
             this.par = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.harMin = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.harY = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.harX = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.Overviev.SuspendLayout();
             this.Przegląd.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -85,6 +92,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Overviev
@@ -242,7 +250,7 @@
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Location = new System.Drawing.Point(21, 71);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(376, 100);
+            this.groupBox3.Size = new System.Drawing.Size(415, 100);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Wynik";
@@ -268,7 +276,7 @@
             // 
             this.genMin.Location = new System.Drawing.Point(273, 31);
             this.genMin.Name = "genMin";
-            this.genMin.Size = new System.Drawing.Size(53, 20);
+            this.genMin.Size = new System.Drawing.Size(120, 20);
             this.genMin.TabIndex = 11;
             this.genMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -359,7 +367,7 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Location = new System.Drawing.Point(19, 124);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(376, 100);
+            this.groupBox2.Size = new System.Drawing.Size(423, 100);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Wynik";
@@ -385,7 +393,7 @@
             // 
             this.climbMin.Location = new System.Drawing.Point(273, 31);
             this.climbMin.Name = "climbMin";
-            this.climbMin.Size = new System.Drawing.Size(53, 20);
+            this.climbMin.Size = new System.Drawing.Size(120, 20);
             this.climbMin.TabIndex = 11;
             this.climbMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -501,6 +509,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.hsm);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.hmcr);
@@ -581,6 +590,74 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Symulacja optymalizacji funkcji za pomocą algorytmów";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.harMin);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.harY);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.harX);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Location = new System.Drawing.Point(224, 38);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(217, 180);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Wynik";
+            // 
+            // harMin
+            // 
+            this.harMin.Location = new System.Drawing.Point(89, 86);
+            this.harMin.Name = "harMin";
+            this.harMin.Size = new System.Drawing.Size(120, 20);
+            this.harMin.TabIndex = 11;
+            this.harMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(12, 89);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(47, 13);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "minimum";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
+            // 
+            // harY
+            // 
+            this.harY.Location = new System.Drawing.Point(89, 57);
+            this.harY.Name = "harY";
+            this.harY.Size = new System.Drawing.Size(53, 20);
+            this.harY.TabIndex = 7;
+            this.harY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.harY.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(12, 60);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(12, 13);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "y";
+            // 
+            // harX
+            // 
+            this.harX.Location = new System.Drawing.Point(89, 31);
+            this.harX.Name = "harX";
+            this.harX.Size = new System.Drawing.Size(53, 20);
+            this.harX.TabIndex = 7;
+            this.harX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(12, 34);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(12, 13);
+            this.label23.TabIndex = 6;
+            this.label23.Text = "x";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,6 +682,8 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,6 +740,13 @@
         private System.Windows.Forms.TextBox par;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox harMin;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox harY;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox harX;
+        private System.Windows.Forms.Label label23;
     }
 }
 

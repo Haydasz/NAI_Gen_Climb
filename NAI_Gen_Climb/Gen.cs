@@ -58,9 +58,9 @@ namespace NAI_Gen_Climb
 
             }
 
-           
-            Console.WriteLine(minimum);
-            Console.WriteLine(minIter);
+            Console.WriteLine("Genetyczny:");
+            Console.WriteLine("Minimum: " + minimum);
+            Console.WriteLine("Iteracja: " + minIter);
 
             
             return ret;

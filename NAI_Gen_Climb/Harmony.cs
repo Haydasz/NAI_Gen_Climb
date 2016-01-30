@@ -15,7 +15,7 @@ namespace NAI_Gen_Climb
         private double max;
         private int iteration;
         private List<string> ret;
-        private double bw = 0.2;
+        private double bw = 0.002;
 
         public Harmony(int hsm, double hmcr, double par, double min, double max, int iteration)
         {
@@ -37,34 +37,42 @@ namespace NAI_Gen_Climb
 
             for (iter = 0; iter<iteration; iter ++)
             {
-                trial = memory[rand.Next(0, hsm - 1)];
-              //  for (d = 0; d < 2; d++)
-                //{
-                    
+                //trial = memory[rand.Next(0, hsm - 1)]; 
+                trial = new HarSegment();
+                for (d = 0; d < 2; d++)
+                {
+                   
                     if (rand.NextDouble() < hmcr)
                     {
-                        //trial = memory[rand.Next(0, hsm-1)];
+                       trial = memory[rand.Next(0, hsm-1)];
                         if (rand.NextDouble() < par)
                         {
-                        //          if(d == 0)
-                        var x = rand.NextDouble() * (1 + 1) - 1;
-                                trial.x1 = trial.x1 + (rand.NextDouble() * (1 + 1) -1) * bw; 
-                    //        else
-                                trial.x2 = trial.x2 + (rand.NextDouble() * (1 + 1) - 1) * bw;
+                                  if(d == 0)
+                       // var x = rand.NextDouble() * (1 + 1) - 1;
+                                trial.x1 = trial.x1 + ((rand.NextDouble() * (1 + 1) -1) /* bw*/); 
+                          else
+                                trial.x2 = trial.x2 + ((rand.NextDouble() * (1 + 1) - 1) /* bw*/);
                         }
                     }
                     else
                     {
-                      //  if (d == 0)
+                        if (d == 0)
                             trial.x1 = min + (max - min) * rand.NextDouble();
-                        //else
+                        else
                             trial.x2 = min + (max - min) * rand.NextDouble();
                     }
-                //}
+                }
                 memory = fitness(memory, trial);
             }
 
-           // ret.Add("hguyg");
+            ret = new List<string>();
+            ret.Add(memory[0].x1.ToString());
+            ret.Add(memory[0].x2.ToString());
+            ret.Add(memory[0].wynik.ToString());
+
+            Console.WriteLine("Harmonia:");
+            Console.WriteLine("Minimum: " + memory[0].wynik);
+            //Console.WriteLine("Iteracja: " + minIter);
 
             return ret;
         }
