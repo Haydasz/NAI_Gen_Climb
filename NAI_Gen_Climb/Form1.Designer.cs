@@ -541,7 +541,6 @@
             this.label19.Size = new System.Drawing.Size(31, 13);
             this.label19.TabIndex = 9;
             this.label19.Text = "HSM";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // hmcr
             // 
@@ -560,7 +559,6 @@
             this.label18.Size = new System.Drawing.Size(39, 13);
             this.label18.TabIndex = 7;
             this.label18.Text = "HMCR";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // par
             // 
@@ -621,7 +619,6 @@
             this.label21.Size = new System.Drawing.Size(47, 13);
             this.label21.TabIndex = 9;
             this.label21.Text = "minimum";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // harY
             // 
@@ -630,7 +627,6 @@
             this.harY.Size = new System.Drawing.Size(53, 20);
             this.harY.TabIndex = 7;
             this.harY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.harY.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label22
             // 

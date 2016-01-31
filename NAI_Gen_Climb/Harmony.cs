@@ -15,7 +15,7 @@ namespace NAI_Gen_Climb
         private double max;
         private int iteration;
         private List<string> ret;
-        private double bw = 0.002;
+        private double bw = 0.2;
 
         public Harmony(int hsm, double hmcr, double par, double min, double max, int iteration)
         {
@@ -49,9 +49,9 @@ namespace NAI_Gen_Climb
                         {
                                   if(d == 0)
                        // var x = rand.NextDouble() * (1 + 1) - 1;
-                                trial.x1 = trial.x1 + ((rand.NextDouble() * (1 + 1) -1) /* bw*/); 
+                                trial.x1 = trial.x1 + ((rand.NextDouble() * (1 + 1) -1) * bw); 
                           else
-                                trial.x2 = trial.x2 + ((rand.NextDouble() * (1 + 1) - 1) /* bw*/);
+                                trial.x2 = trial.x2 + ((rand.NextDouble() * (1 + 1) - 1) * bw);
                         }
                     }
                     else
@@ -82,14 +82,6 @@ namespace NAI_Gen_Climb
             var temp = memory.OrderBy(x => x.wynik).ToList();
             if (temp[hsm-1].wynik > trial.wynik)
             {
-                /* ret = new List<string>();
-
-                 minimum = pop[0].wynik;
-                 minIter = idx;
-                 ret.Add(minimum.ToString());
-                 ret.Add(minIter.ToString());
-                 ret.Add(pop[0].x1.ToString());
-                 ret.Add(pop[0].x2.ToString());*/
                 temp[hsm-1] = trial;
             }
 

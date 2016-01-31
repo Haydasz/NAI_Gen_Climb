@@ -29,12 +29,12 @@ namespace NAI_Gen_Climb
 
         public List<String> runGen()
         {
-            int idx, idy, minIter = 0;
-            double y, minimum;
+            int idx, minIter = 0;
+            double minimum;
            
 
             minimum = Double.MaxValue;
-            pop = this.initPop(min, max, popSize); //inicjalizacja populacji
+            pop = initPop(min, max, popSize); //inicjalizacja populacji
 
             for (idx = 0; idx < iteration; idx++)
             {
@@ -103,9 +103,11 @@ namespace NAI_Gen_Climb
 
             foreach (var item in list)
             {
-                if (random.Next() % 100 > 50) parentList.Add(item);
+                if (random.Next() % 100 > 50)
+                    parentList.Add(item);
             }
-            if (parentList.Count % 2 != 0) parentList.Remove(parentList[0]);
+            if (parentList.Count % 2 != 0)
+                parentList.Remove(parentList[0]);
 
             for (int i = 0; i < parentList.Count / 2; i = i + 2)
             {
@@ -183,7 +185,7 @@ namespace NAI_Gen_Climb
             return tempList;
         }
 
-        public static double RandomZZakresu(double min, double max)
+        public static double RandomFrom(double min, double max)
         {
             return random.NextDouble() * (max - min) + min;
         }

@@ -14,8 +14,8 @@ namespace NAI_Gen_Climb
         //
         public EvSegment(double min, double max)
         {
-            x1 = Evolution.RandomZZakresu(min, max);
-            x2 = Evolution.RandomZZakresu(min, max);
+            x1 = Evolution.RandomFrom(min, max);
+            x2 = Evolution.RandomFrom(min, max);
         }
 
         public EvSegment(byte[] x, byte[] y)

@@ -13,20 +13,16 @@ namespace NAI_Gen_Climb
         public static double funcGeem(Double _x1, Double _x2)
         {
             double ret;
-            //_x1 = -0.007;
-            //_x2 = -0.009;
-
+           
             ret = 4 * (Math.Pow(_x1, 2)) - ((2.1) * (Math.Pow(_x1, 4))) + ((Math.Pow(_x1, 6)) / 3) + _x1 * _x2 - (4 * (Math.Pow(_x2, 2))) + (4 * (Math.Pow(_x2, 4)));
-          //  Console.WriteLine(ret);
+         
             return ret;
         }
 
         public static double funcTest1(Double _x1, Double _x2)
         {
             double ret;
-            //_x1 = 0.0;
-            // _x2 = 1.0;
-
+      
             ret = Math.Pow(_x1, 2) + (_x1 * _x2) + 0.5 * (Math.Pow(_x2, 2)) - _x1 - _x2;
 
             return ret;
@@ -35,9 +31,7 @@ namespace NAI_Gen_Climb
         public static double funcMatyas(Double _x1, Double _x2)
         {
             double ret;
-            //x1 = 0;
-            //_x2 = 0;
-
+            
             ret = 0.26 * (Math.Pow(_x1, 2) + Math.Pow(_x2, 2)) - 0.48 * _x1 * _x2;
 
             return ret;
